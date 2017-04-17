@@ -1,0 +1,17 @@
+Towers of Hanoi
+
+Takes as a parameter the disk that is the largest disk in the tower we want to move. Our function will also take three parameters indicating from which peg the tower should be moved(source), to which peg it should go(dest), and the other peg, which we can use to temporarily to make this happen (spare). 
+
+ASSIGNMENT: CALL HANOI(4, 1, 2, 3). Parameters imply that the procedure perform the Towers of Hanoi with 4 discs, moving them from peg 1 to peg 3 using 2 as spare.
+MoveTower(Disk, source, spare, dest)
+
+Function MoveTower(disk, source, spare, dest)
+IF disk == 0, THEN:
+    move disk from source to dest
+ELSE:
+    MoveTower(disk - 1, source, dest, spare)   // Step 1 above
+    MoveTower(1, source, spare, dest)              // Step 2 above
+    MoveTower(disk - 1, spare, source, dest)   // Step 3 above
+END IF
+
+
